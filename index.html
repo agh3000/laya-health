@@ -254,6 +254,19 @@
       .brand-node {min-height:124px;padding:22px;}
       .brand-connector {height:41px;transform:rotate(90deg);}
     }
+
+    /* Why get your blood tests but not your sleep? */
+    .health-question { background:#1c1e1d; color:#fff; padding:76px 0; }
+    .health-question-grid { display:grid; grid-template-columns:1.14fr .86fr; align-items:center; gap:72px; }
+    .health-question .section-kicker { color:#c9d4bb; }
+    .health-question h2 { font-size:clamp(34px,4.4vw,62px); line-height:1.11; letter-spacing:-.058em; margin:17px 0 0; }
+    .health-question h2 em { color:var(--lime); font-style:normal; }
+    .health-question p { color:#d0d5cd; line-height:1.72; font-size:clamp(15px,1.4vw,18px); max-width:440px; margin:0; }
+    @media (max-width:800px) {
+      .health-question { padding:52px 0; }
+      .health-question-grid { grid-template-columns:1fr; gap:22px; }
+      .health-question p { max-width:580px; }
+    }
   </style>
 </head>
 <body>
@@ -293,6 +306,16 @@
       </div>
     </section>
 
+
+    <section class="health-question" aria-labelledby="healthQuestion">
+      <div class="container health-question-grid">
+        <div>
+          <span class="section-kicker">THE HEALTH CHECK WE SKIP</span>
+          <h2 id="healthQuestion">Got your blood tests done?<br/><em>What about your sleep?</em></h2>
+        </div>
+        <p>A clinical sleep study can measure your brain activity, breathing, oxygen levels and heart rhythm overnight—helping reveal sleep disruptions that a wearable score alone may not explain.</p>
+      </div>
+    </section>
     <section class="brand-architecture" aria-labelledby="brandIntro">
       <div class="container brand-architecture-inner reveal">
         <div class="brand-node">
@@ -348,7 +371,7 @@
       </div>
     </div></section>
     <section class="section"><div class="container philosophy">
-      <div class="reveal"><span class="section-kicker">05 / THE BIG IDEA</span><div class="giant-quote">You check<br/>your blood.<br/><em>Why not</em><br/>your sleep?</div></div>
+      <div class="reveal"><span class="section-kicker">05 / THE BIG IDEA</span><div class="giant-quote">Beyond<br/>the numbers.<br/><em>Better</em><br/>sleep health.</div></div>
       <div class="reveal"><h2>Make sleep health<br/>a normal health check.</h2><p>Sleep assessment has traditionally been something you seek when a problem becomes serious. We want to make clinical-grade sleep health more accessible, understandable, and approachable—while preserving the rigor that medical testing deserves.</p>
       <div class="values"><div><b>Clinical-grade by design</b><span>High-fidelity physiological measurement, not wearable estimates alone.</span></div><div><b>Human-first experience</b><span>Welcoming environments and understandable results.</span></div><div><b>Technology with purpose</b><span>AI assists clinical workflows; it doesn't replace clinicians.</span></div><div><b>Care beyond one night</b><span>Follow-up, monitoring and interventions where appropriate.</span></div></div></div>
     </div></section>
@@ -358,7 +381,7 @@
         <div class="faq-item"><button type="button" aria-expanded="false">Is this different from a wearable sleep tracker? <span class="plus" aria-hidden="true">+</span></button><div class="answer">Yes. Wearables are valuable for everyday trends, but a clinical-grade sleep study can record signals such as EEG, breathing effort, airflow, oxygen and cardiac activity directly. LAYA Sleep aims to bring this deeper assessment into a more accessible experience.</div></div>
         <div class="faq-item"><button type="button" aria-expanded="false">Is LAYA Sleep only for sleep apnea? <span class="plus" aria-hidden="true">+</span></button><div class="answer">No. The concept is broader sleep health, including sleep architecture, fragmentation, breathing and related physiology. Any medical diagnosis or treatment would depend on a licensed clinician's assessment and appropriate testing.</div></div>
         <div class="faq-item"><button type="button" aria-expanded="false">Does this replace my doctor? <span class="plus" aria-hidden="true">+</span></button><div class="answer">No. LAYA Sleep's proposed model uses technology to support—rather than substitute for—qualified clinical interpretation and care. Testing and treatments would be delivered with appropriate clinical oversight.</div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false">Can I use LAYA Sleep with my smartwatch or ring? <span class="plus" aria-hidden="true">+</span></button><div class="answer">That's part of the vision. Wearables can help follow daily sleep trends between clinical assessments. Brand integrations and partnerships have not yet been established.</div></div>
+        <div class="faq-item"><button type="button" aria-expanded="false">How does LAYA Sleep work with my smartwatch or ring? <span class="plus" aria-hidden="true">+</span></button><div class="answer">Our goal is to establish a clinical-grade baseline through an overnight sleep assessment, then use everyday wearable trends to help put changes over time into context. The clinical study does not automatically calibrate or medically validate your wearable's measurements. Direct wearable integrations and partnerships are planned, not yet available.</div></div>
         <div class="faq-item"><button type="button" aria-expanded="false">Where can I book a Sleep Physical? <span class="plus" aria-hidden="true">+</span></button><div class="answer">LAYA Sleep is currently a pre-launch offering from LAYA Health, exploring an initial pilot in India. There are no clinics or appointments available yet. You can register your interest below.</div></div>
       </div>
     </div></section>
