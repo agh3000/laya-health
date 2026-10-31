@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#f6f6f1">
   <meta name="description" content="Meet Arnav Gupta, founder of LAYA Health. A Harvard PhD researcher working at the intersection of sleep science, clinical physiology and artificial intelligence.">
   <meta property="og:title" content="Our Founder — LAYA Health">
-  <meta property="og:description" content="From research in sleep AI to a new vision for accessible clinical sleep health.">
+  <meta property="og:description" content="Meet Arnav Gupta, Harvard PhD student in Engineering Sciences, sleep AI researcher and founder of LAYA Health.">
+  <meta property="og:image" content="https://agh3000.github.io/laya-health/assets/arnav-gupta-founder.webp">
   <title>Our Founder — LAYA Health</title>
   <style>
   :root{--ink:#151615;--muted:#656760;--paper:#f6f6f1;--line:#dedfd7;--lime:#d7fa7b;--night:#191a1b;--radius:26px}
@@ -95,6 +96,34 @@
     .story-copy p{font-size:16px}
     .vision{padding:60px 0}
   }
+
+  /* Updated founder portrait */
+  .founder-portrait {position:relative;margin:0;border-radius:30px;overflow:hidden;min-height:530px;aspect-ratio:0.91;background:#e4e5e1;box-shadow:0 18px 42px rgba(29,34,29,.09)}
+  .founder-portrait img {display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 21%}
+  .founder-portrait:after {content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(12,15,12,.55));pointer-events:none}
+  .founder-portrait figcaption {position:absolute;bottom:30px;left:30px;right:30px;z-index:2;color:#fff;display:flex;justify-content:space-between;align-items:end;gap:12px;font-size:10px;font-weight:750;letter-spacing:.10em}
+  .founder-portrait figcaption span:first-child{font-size:16px;letter-spacing:.015em}
+  .founder-role strong{color:#232b23;font-weight:750}
+  .research-publications{margin-top:62px}
+  .papers-head{display:flex;justify-content:space-between;gap:50px;align-items:end;padding-bottom:28px}
+  .papers-head h3{font-size:clamp(34px,4vw,50px);letter-spacing:-.065em;line-height:1.1;margin:12px 0 0}
+  .papers-head p{max-width:390px;font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+  .paper-list{border-top:1px solid #cbd0c5}
+  .paper-item{padding:26px 0;display:grid;grid-template-columns:127px minmax(0,1fr) 110px;column-gap:25px;align-items:start;border-bottom:1px solid #cbd0c5}
+  .paper-index{font-size:25px;font-weight:800;color:#a1a99b;letter-spacing:-.04em}
+  .paper-role{display:block;margin-top:7px;font-size:9px;letter-spacing:.08em;font-weight:800;color:#646e5e}
+  .paper-journal{font-size:11px;color:#637254;font-weight:800;letter-spacing:.035em}
+  .paper-main h4{font-size:clamp(19px,2vw,25px);letter-spacing:-.04em;line-height:1.24;margin:10px 0 8px;max-width:690px}
+  .paper-main p{color:#565d53;font-size:13px;line-height:1.6;max-width:690px;margin:0 0 11px}
+  .paper-authors{font-size:11px;line-height:1.5;color:#818b7d}
+  .paper-authors strong{color:#33412a}
+  .paper-link{display:inline-block;justify-self:end;font-size:12px;font-weight:750;text-decoration:none;border-bottom:1px solid #1d2d1a;padding:8px 0;white-space:nowrap}
+  .featured-paper .paper-index{color:#4d6534}
+  .featured-paper .paper-role{color:#617b43}
+  .research-links{display:flex;flex-wrap:wrap;gap:26px;margin-top:24px}
+  .research-links a{font-size:12px;color:#405336;font-weight:750;text-decoration:none;border-bottom:1px solid #7a9076;padding-bottom:5px}
+  @media(max-width:850px){.founder-portrait{aspect-ratio:1.12;min-height:360px}.papers-head{display:block}.papers-head p{max-width:610px;margin-top:17px}}
+  @media(max-width:620px){.founder-portrait{aspect-ratio:.98;min-height:380px}.founder-portrait figcaption{left:22px;right:22px;bottom:22px}.paper-item{grid-template-columns:1fr;gap:10px}.paper-index{font-size:15px;display:flex;align-items:center;gap:10px}.paper-role{margin:0}.paper-link{justify-self:start}.research-publications{margin-top:47px}}
   </style>
 </head>
 <body>
@@ -118,20 +147,17 @@
         <h1 id="founderTitle">Science first.<br><em>People always.</em></h1>
         <p class="intro">Turning years of research in sleep physiology and artificial intelligence into a simple idea: advanced sleep health should be easier to understand and access.</p>
         <span class="founder-name">Arnav Gupta</span>
-        <span class="founder-role">Founder, LAYA Health<br>PhD researcher, Harvard University · Sleep AI research at Beth Israel Deaconess Medical Center</span>
+        <span class="founder-role">Founder, LAYA Health<br><strong>PhD Student in Engineering Sciences, Harvard University</strong><br>Sleep AI research · Beth Israel Deaconess Medical Center</span>
         <div class="hero-links">
           <a class="button" href="./index.html#physical">Explore LAYA Sleep <span aria-hidden="true">↗</span></a>
-          <a class="button outline" href="https://scholar.google.com/citations?user=g_C2jqMAAAAJ" target="_blank" rel="noopener noreferrer">Research profile ↗</a>
+          <a class="button outline" href="https://www.linkedin.com/in/guptaarnav1999/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="button outline" href="https://scholar.google.com/citations?user=g_C2jqMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
         </div>
       </div>
-      <div class="art" role="img" aria-label="Editorial AG monogram with illustrated scientific signals, not a photograph">
-        <div class="art-label">FOUNDER / RESEARCHER / BUILDER</div>
-        <div class="monogram">AG.</div>
-        <svg viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 53 L31 53 L39 48 L48 56 L57 35 L68 72 L82 47 L94 53 L114 53 L128 43 L141 64 L155 50 L171 51 L186 27 L202 83 L217 43 L232 55 L252 53 L271 53 L285 37 L300 65 L315 48 L329 51 L343 33 L354 78 L367 45 L381 56 L403 53 L421 53 L433 43 L445 63 L455 50 L472 51 L488 25 L501 81 L519 45 L530 56 L550 53 L569 53 L583 47 L600 53" fill="none" stroke="#d7fa7b" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="art-caption"><span>BRAIN SIGNALS</span><span>BREATHING</span><span>PHYSIOLOGY</span></div>
-      </div>
+      <figure class="founder-portrait">
+        <img src="./assets/arnav-gupta-founder.webp" alt="Portrait of Arnav Gupta, founder of LAYA Health" fetchpriority="high" width="600" height="656">
+        <figcaption><span>ARNAV GUPTA</span><span>FOUNDER · LAYA HEALTH</span></figcaption>
+      </figure>
     </section>
     <section class="story" aria-labelledby="storyTitle">
       <div class="container story-grid">
@@ -152,15 +178,44 @@
           <div><span class="label">THE FOUNDATION</span><h2 id="researchTitle">Built on sleep science.</h2></div>
         </div>
         <div class="experience-grid">
-          <div class="experience-card"><span class="index">01 / ACADEMICS</span><div><strong>Harvard University</strong><span class="detail">PhD researcher at the Harvard John A. Paulson School of Engineering and Applied Sciences.</span></div></div>
+          <div class="experience-card"><span class="index">01 / ACADEMICS</span><div><strong>Harvard University</strong><span class="detail">PhD student in Engineering Sciences at the Harvard John A. Paulson School of Engineering and Applied Sciences.</span></div></div>
           <div class="experience-card"><span class="index">02 / RESEARCH</span><div><strong>Clinical sleep AI</strong><span class="detail">Sleep physiology and machine-learning research in the Department of Neurology at Beth Israel Deaconess Medical Center.</span></div></div>
           <div class="experience-card"><span class="index">03 / PUBLICATION</span><div><strong>PANDA</strong><span class="detail">First author of a 2026 npj Digital Medicine paper on AI-based pediatric sleep arousal detection.</span></div></div>
           <div class="experience-card"><span class="index">04 / ENTREPRENEURSHIP</span><div><strong>Harvard Innovation Labs</strong><span class="detail">i-lab member exploring ways to translate unmet sleep-health needs into an accessible consumer experience.</span></div></div>
         </div>
-        <div class="publication">
-          <div><span class="label">SELECTED RESEARCH</span><strong>PANDA pediatric arousal neural detection architecture</strong><p>Gupta et al., <em>npj Digital Medicine</em> (2026). Academic research, cited here as background to the founder's experience.</p></div>
-          <a href="https://www.nature.com/articles/s41746-026-02967-x" target="_blank" rel="noopener noreferrer">Read publication ↗</a>
-        </div>
+
+        <section class="research-publications" id="publications" aria-labelledby="papersTitle">
+          <div class="papers-head">
+            <div><span class="label">PUBLICATIONS</span><h3 id="papersTitle">Selected sleep research.</h3></div>
+            <p>Four peer-reviewed publications, from pediatric sleep AI to large-scale clinical sleep datasets. These are academic publications from the research teams listed, not LAYA Health products.</p>
+          </div>
+          <div class="paper-list">
+            <article class="paper-item featured-paper">
+              <div class="paper-index">01 <span class="paper-role">FIRST AUTHOR</span></div>
+              <div class="paper-main"><span class="paper-journal"><i>npj Digital Medicine</i> · 2026</span><h4>PANDA pediatric arousal neural detection architecture</h4><p>Developing and validating a deep-learning framework for pediatric sleep arousal detection from clinical polysomnography.</p><span class="paper-authors"><strong>Arnav Gupta</strong>, Ayush Tripathi, Wolfgang Ganglberger, et al.</span></div>
+              <a class="paper-link" href="https://www.nature.com/articles/s41746-026-02967-x" target="_blank" rel="noopener noreferrer" aria-label="Read PANDA paper">Read paper ↗</a>
+            </article>
+            <article class="paper-item">
+              <div class="paper-index">02 <span class="paper-role">CO-AUTHOR</span></div>
+              <div class="paper-main"><span class="paper-journal"><i>SLEEP</i> · 2026</span><h4>Pediatric SleepNet: a deep learning network for reliable pediatric sleep staging across developmental stages</h4><p>Automated sleep staging across childhood, including younger age groups where sleep physiology is changing rapidly.</p><span class="paper-authors">Ayush Tripathi, <strong>Arnav Gupta</strong>, Wolfgang Ganglberger, et al.</span></div>
+              <a class="paper-link" href="https://doi.org/10.1093/sleep/zsag064" target="_blank" rel="noopener noreferrer" aria-label="Read Pediatric SleepNet paper">Read paper ↗</a>
+            </article>
+            <article class="paper-item">
+              <div class="paper-index">03 <span class="paper-role">CO-AUTHOR</span></div>
+              <div class="paper-main"><span class="paper-journal"><i>SLEEP</i> · 2026</span><h4>The Human Sleep Project: A Multi-Center Clinical Polysomnography Dataset Across the Human Lifespan</h4><p>Building a harmonized, multi-center collection of clinical sleep studies spanning children through older adults.</p><span class="paper-authors">Qichen Li, Shenghan Wen, Haoqi Sun, et al., including <strong>Arnav Gupta</strong>.</span></div>
+              <a class="paper-link" href="https://doi.org/10.1093/sleep/zsag215" target="_blank" rel="noopener noreferrer" aria-label="Read Human Sleep Project paper">Read paper ↗</a>
+            </article>
+            <article class="paper-item">
+              <div class="paper-index">04 <span class="paper-role">CO-AUTHOR</span></div>
+              <div class="paper-main"><span class="paper-journal"><i>SLEEP</i> · 2025</span><h4>The Boston Children's Hospital Sleep Corpus: A Collection of 15,695 Annotated Pediatric Polysomnograms</h4><p>Introducing a large clinical pediatric sleep-study dataset for research across childhood and different sleep disorders.</p><span class="paper-authors">Ayush Tripathi, Wolfgang Ganglberger, Haoqi Sun, et al., including <strong>Arnav Gupta</strong>.</span></div>
+              <a class="paper-link" href="https://doi.org/10.1093/sleep/zsaf273" target="_blank" rel="noopener noreferrer" aria-label="Read Boston Children's Hospital Sleep Corpus paper">Read paper ↗</a>
+            </article>
+          </div>
+          <div class="research-links">
+            <a href="https://scholar.google.com/citations?user=g_C2jqMAAAAJ" target="_blank" rel="noopener noreferrer">Full publication profile on Google Scholar ↗</a>
+            <a href="https://www.linkedin.com/in/guptaarnav1999/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+          </div>
+        </section>
       </div>
     </section>
     <section class="vision" aria-labelledby="visionTitle">
@@ -178,7 +233,7 @@
     <div class="container disclaimer">LAYA Health is an independent, pre-launch venture. Academic affiliations and publications describe the founder's research background; they do not imply endorsement by Harvard University, Beth Israel Deaconess Medical Center or their affiliated institutions. Academic models, research data and intellectual property are not represented as LAYA Health products or assets.</div>
   </main>
   <footer>
-    <div class="container footer-inner"><div><strong>laya.</strong><p>HEALTH · Starting with LAYA Sleep</p></div><a href="./index.html">Back to LAYA Health ↗</a><p>© <span id="year">2026</span> LAYA Health · Pre-launch</p></div>
+    <div class="container footer-inner"><div><strong>laya.</strong><p>HEALTH · Starting with LAYA Sleep</p></div><a href="./index.html">Back to LAYA Health ↗</a><p>© <span id="year">2026</span> LAYA Health · Pre-launch</p><a href="https://www.linkedin.com/in/guptaarnav1999/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
   </footer>
   <script>
     (() => {
