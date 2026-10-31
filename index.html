@@ -261,14 +261,15 @@
     /* Founder introduction */
     .founder-preview {padding:76px 0;background:#e9ede4;}
     .founder-preview-inner {display:grid;grid-template-columns:310px 1fr;gap:78px;align-items:center;}
-    .founder-preview-mark {height:265px;border-radius:27px;background:#202421;color:#d7fa7b;display:flex;align-items:center;justify-content:center;font-size:125px;letter-spacing:-.15em;font-weight:850;padding-right:17px;}
+    .founder-preview-mark {height:265px;border-radius:27px;background:#e4e4e0;overflow:hidden;}
+    .founder-preview-mark img {display:block;width:100%;height:100%;object-fit:cover;object-position:center 24%;}
     .founder-preview h2{font-size:clamp(35px,4.2vw,58px);letter-spacing:-.064em;line-height:1.07;margin:16px 0;}
     .founder-preview p{color:#535c4f;line-height:1.7;max-width:600px;font-size:15px;margin:0 0 24px;}
     .founder-preview .section-kicker{color:#65735d;}
     @media(max-width:740px){
       .founder-preview {padding:58px 0;}
       .founder-preview-inner {grid-template-columns:1fr;gap:24px;}
-      .founder-preview-mark {height:140px;font-size:90px;}
+      .founder-preview-mark {height:250px;}
     }
   </style>
 </head>
@@ -372,11 +373,11 @@
 
     <section class="founder-preview" aria-labelledby="founderPreviewTitle">
       <div class="container founder-preview-inner">
-        <div class="founder-preview-mark" aria-hidden="true">AG.</div>
+        <div class="founder-preview-mark"><img src="./assets/arnav-gupta-founder.webp" alt="Portrait of Arnav Gupta, founder of LAYA Health" width="600" height="656" loading="lazy"></div>
         <div>
           <span class="section-kicker">MEET THE FOUNDER</span>
           <h2 id="founderPreviewTitle">Built by a sleep scientist.<br/>For everyone else.</h2>
-          <p><strong>Arnav Gupta</strong> is a Harvard PhD researcher studying clinical sleep physiology and AI. LAYA Health grew from a simple question: why should understanding your sleep be so difficult?</p>
+          <p><strong>Arnav Gupta</strong> is a Harvard PhD student in Engineering Sciences studying clinical sleep physiology and AI. LAYA Health grew from a simple question: why should understanding your sleep be so difficult?</p>
           <a class="btn" href="./founder.html">Meet our founder <span aria-hidden="true">↗</span></a>
         </div>
       </div>
