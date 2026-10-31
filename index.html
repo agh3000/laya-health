@@ -164,6 +164,10 @@
     .signup input,.signup select{width:100%;border:1px solid #dadcd5;background:#fafaf7;border-radius:9px;padding:13px 14px;font-size:13px;min-height:46px;color:var(--ink);}
     .signup .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
     .signup .btn{width:100%;margin-top:22px;}
+    .signup-consent{display:flex;align-items:flex-start;gap:12px;margin-top:19px;font-size:12px;line-height:1.7;color:#41483b;cursor:pointer;}
+    .signup-consent input{flex:none;min-width:17px;width:17px;height:17px;margin:2px 0 0;accent-color:#4d6e32;cursor:pointer;}
+    .signup-consent a{color:#283a1f;font-weight:750;text-decoration:underline;text-underline-offset:3px;}
+    .anti-bot{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;overflow:hidden!important;pointer-events:none!important;}
     .fine-print{font-size:10px;color:#73776f;line-height:1.6;margin-top:13px;}
     .form-status {font-size:12px;line-height:1.6;min-height:0;margin-top:12px;color:#3e512a;}
     footer{background:#171918;color:#fff;padding:53px 0 28px;}
@@ -394,18 +398,24 @@
     </div></section>
     <section class="waitlist" id="early-access"><div class="container waitlist-layout">
       <div class="reveal"><span class="section-kicker" style="color:#4e5e36">COMING SOON / INDIA FIRST</span><h2>Better sleep<br/>starts with<br/>a better question.</h2><p>What is actually happening while you sleep? Join our early-interest list to hear about the first LAYA Sleep pilot and future updates.</p><span class="tiny" style="color:#4c583c">PRE-LAUNCH · NO CLINICAL SERVICES YET</span></div>
-      <form class="signup reveal" id="interestForm" name="laya-sleep-early-access" method="POST" action="#early-access">
+      <form class="signup reveal" id="interestForm" name="laya-sleep-early-access" method="POST" action="https://formsubmit.co/agupta2@g.harvard.edu" accept-charset="UTF-8">
         <h3 class="signup-head">Get on the early list ↗</h3>
+        <input type="hidden" name="_subject" value="LAYA Sleep — new early-access signup"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_next" value="https://agh3000.github.io/laya-health/thanks.html"/>
+        <input type="hidden" name="_url" value="https://agh3000.github.io/laya-health/"/>
+        <input type="hidden" name="signup_program" value="LAYA Sleep early interest"/>
+        <div class="anti-bot" aria-hidden="true"><label for="companyWebsite">Leave blank</label><input name="_honey" id="companyWebsite" type="text" tabindex="-1" autocomplete="off"/></div>
         <div class="twocol"><div class="field"><label for="firstName">First name</label><input id="firstName" name="first_name" autocomplete="given-name" placeholder="Your name" required maxlength="80"/></div><div class="field"><label for="city">Your city</label><select id="city" name="city" required><option value="" disabled selected>Select city</option><option>Bengaluru</option><option>Mumbai</option><option>Delhi NCR</option><option>Hyderabad</option><option>Other / outside India</option></select></div></div>
         <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required maxlength="250" /></div>
         <div class="field"><label for="interest">I'm interested as a...</label><select id="interest" name="interest" required><option value="" disabled selected>Choose one</option><option>Potential customer</option><option>Clinical partner</option><option>Employer / wellness partner</option><option>Investor</option><option>Other</option></select></div>
+        <label class="signup-consent"><input type="checkbox" name="contact_consent" value="Yes, I agree" required/><span>I agree to receive emails from LAYA Health about LAYA Sleep early access, pilot availability and relevant updates. I can opt out at any time. <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy notice ↗</a></span></label>
         <button class="btn" type="submit">Join early access <span aria-hidden="true">↗</span></button>
-        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
-        <div class="fine-print">Early-interest form only, not a booking or medical consultation. Please don't enter health information. The signup list is not accepting submissions yet. A secure form service must be connected before any information is collected.</div>
+        <div class="fine-print">This is an early-interest list, not a booking or medical consultation. Please don't enter health information. Form submissions are delivered via FormSubmit; first-time activation by the recipient may be required.</div>
       </form>
     </div></section>
   </main>
-  <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">laya<span>.</span><span style="font-size:13px;letter-spacing:.14em;color:#b2bab0;margin-left:12px;font-weight:700;">HEALTH</span></div><div class="footer-desc">A broader vision for accessible, clinically grounded health.<br/><strong style="color:#fff">Starting with LAYA Sleep.</strong></div></div><div class="footer-links"><div><span>Explore</span><a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="#early-access">Early interest</a></div><div><span>About</span><a href="./founder.html">Our founder</a><a href="#faq">FAQs</a><a href="#early-access">Partner with us</a><a href="#top">Back to top ↑</a></div></div></div>
+  <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">laya<span>.</span><span style="font-size:13px;letter-spacing:.14em;color:#b2bab0;margin-left:12px;font-weight:700;">HEALTH</span></div><div class="footer-desc">A broader vision for accessible, clinically grounded health.<br/><strong style="color:#fff">Starting with LAYA Sleep.</strong></div></div><div class="footer-links"><div><span>Explore</span><a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="#early-access">Early interest</a></div><div><span>About</span><a href="./founder.html">Our founder</a><a href="#faq">FAQs</a><a href="./privacy.html">Privacy</a><a href="#early-access">Partner with us</a><a href="#top">Back to top ↑</a></div></div></div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> LAYA Health · Working brand · Pre-launch concept</span><span>Not currently offering medical services. No affiliations or wearable partnerships are implied.</span></div></div></footer>
   <script>
     (() => {
@@ -419,32 +429,16 @@
         const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)} }),{threshold:.08});
         document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
       } else {document.querySelectorAll('.reveal').forEach(e=>e.classList.add('visible'));}
-      // GitHub Pages is static hosting; it cannot process signup forms.
-      // To enable collection, configure an external form endpoint such as Formspree.
-      // Only add a reviewed HTTPS form endpoint here once you have a privacy policy.
-      const FORM_ENDPOINT = ''; // e.g. 'https://formspree.io/f/xxxxxxxx'
-      const form=document.getElementById('interestForm'), status=document.getElementById('formStatus');
-      form?.addEventListener('submit', async e=>{
-        e.preventDefault();
-        if (!FORM_ENDPOINT) {
-          status.textContent='Signups are not open yet. Please check back soon; no information was submitted.';
-          return;
+      // Early-interest signups submit directly to FormSubmit over HTTPS.
+      // The provider handles email delivery, first-time address verification and spam checks.
+      // Do not intercept this form: native POST allows captcha and confirmation redirects.
+      const form=document.getElementById('interestForm');
+      form?.addEventListener('submit', () => {
+        const submit=form.querySelector('button[type="submit"]');
+        if (submit) {
+          submit.textContent='Opening secure signup…';
+          // FormSubmit processes and redirects on successful form submission.
         }
-        const submit=form.querySelector('button[type=submit]');
-        submit.disabled=true;
-        status.textContent='Submitting…';
-        try {
-          const response=await fetch(FORM_ENDPOINT, {
-            method:'POST',
-            body:new FormData(form),
-            headers:{Accept:'application/json'}
-          });
-          if (!response.ok) throw new Error('Submission unsuccessful');
-          form.reset();
-          location.href='./thanks.html';
-        } catch (error) {
-          status.textContent='We couldn’t submit your interest. Please try again later.';
-        } finally { submit.disabled=false; }
       });
     })();
   </script>
