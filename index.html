@@ -167,7 +167,17 @@
     .field-optional{font-weight:500;color:#747c6f;font-size:11px;}
     .field-help{font-size:11px!important;line-height:1.6!important;color:#65705f!important;margin:6px 0 0!important;}
     .signup .phone-consent{margin-top:10px;margin-bottom:18px;font-size:11px;}
-    .pricing-field[hidden]{display:none!important;}
+    .pricing-field[hidden],#usdPricing[hidden],#inrPricing[hidden]{display:none!important;}
+    .sleep-value{background:#f1f6e6;border:1px solid #d5e3c1;border-radius:16px;padding:20px 19px;margin:10px 0 21px;}
+    .sleep-value-kicker{display:block;color:#526a32;font-size:9px;font-weight:850;letter-spacing:.11em;line-height:1.4;}
+    .sleep-value h4{font-size:22px;line-height:1.15;letter-spacing:-.05em;margin:12px 0 9px;}
+    .sleep-value p{font-size:12px;color:#4e5945;line-height:1.55;margin:0 0 11px;}
+    .sleep-value ul{margin:13px 0 15px;padding:0;list-style:none;display:grid;gap:10px;}
+    .sleep-value li{font-size:12px;line-height:1.5;color:#3c4a33;padding-left:17px;position:relative;}
+    .sleep-value li:before{content:"✓";position:absolute;left:0;top:0;color:#588032;font-weight:800;}
+    .sleep-value .sleep-value-disclaimer{font-size:10px;color:#6e7968;line-height:1.55;margin:11px 0 0;}
+    .price-survey-label{display:block;margin-top:17px;}
+    .pricing-field #priceCurrency{margin-bottom:3px;}
     .signup-consent{display:flex;align-items:flex-start;gap:12px;margin-top:19px;font-size:12px;line-height:1.7;color:#41483b;cursor:pointer;}
     .signup-consent input{flex:none;min-width:17px;width:17px;height:17px;margin:2px 0 0;accent-color:#4d6e32;cursor:pointer;}
     .signup-consent a{color:#283a1f;font-weight:750;text-decoration:underline;text-underline-offset:3px;}
@@ -420,17 +430,48 @@
         <label class="signup-consent phone-consent"><input id="phoneContactConsent" type="checkbox" name="phone_contact_permission" value="Yes"/><span>You may contact me by phone or WhatsApp about LAYA Sleep pilot opportunities. (optional)</span></label>
         <div class="field"><label for="interest">I'm interested as a...</label><select id="interest" name="interest" required><option value="" disabled selected>Choose one</option><option>Potential customer</option><option>Clinical partner</option><option>Employer / wellness partner</option><option>Investor</option><option>Other</option></select></div>
         <div class="field pricing-field" id="pricingField" hidden>
-          <label for="expectedPrice">What price would feel reasonable for an overnight, clinician-reviewed sleep assessment? <span class="field-optional">(optional)</span></label>
-          <select id="expectedPrice" name="expected_price_inr" disabled>
-            <option value="" selected>Choose a range (optional)</option>
-            <option value="Under ₹5,000">Under ₹5,000</option>
-            <option value="₹5,000–₹9,999">₹5,000–₹9,999</option>
-            <option value="₹10,000–₹14,999">₹10,000–₹14,999</option>
-            <option value="₹15,000–₹24,999">₹15,000–₹24,999</option>
-            <option value="₹25,000 or more">₹25,000 or more</option>
-            <option value="Not sure yet">Not sure yet</option>
+          <div class="sleep-value" aria-labelledby="sleepValueTitle">
+            <span class="sleep-value-kicker">WHAT YOU'RE PRICING · PROPOSED SLEEP PHYSICAL</span>
+            <h4 id="sleepValueTitle">More than a sleep score.</h4>
+            <p>Imagine a comprehensive, overnight <strong>clinical-grade sleep assessment</strong> with:</p>
+            <ul>
+              <li><strong>Deep measurement</strong> of brain activity, breathing, oxygen and heart signals while you sleep</li>
+              <li><strong>A clinician-reviewed report</strong> on sleep patterns and potential disruptions</li>
+              <li><strong>Understandable results and next steps</strong>, including appropriate follow-up recommendations</li>
+              <li><strong>A clinical baseline</strong> to put everyday wearable trends into context</li>
+            </ul>
+            <p class="sleep-value-disclaimer">This is the proposed experience, not a service currently available to book. The precise pilot package, location and inclusions may change. A clinical study does not calibrate or medically validate wearable measurements.</p>
+          </div>
+          <label for="priceCurrency">Which currency would you like to use?</label>
+          <select id="priceCurrency" name="price_currency" disabled>
+            <option value="INR">Indian rupees (₹)</option>
+            <option value="USD">US dollars ($)</option>
           </select>
-          <p class="field-help">Just for early research—not a published price or quote.</p>
+          <div id="inrPricing">
+            <label for="expectedPrice" class="price-survey-label">For the full proposed overnight experience above, what would you be comfortable paying out of pocket? <span class="field-optional">(optional)</span></label>
+            <select id="expectedPrice" name="expected_price_inr" disabled>
+              <option value="" selected>Select a price range (optional)</option>
+              <option value="Under ₹5,000">Under ₹5,000</option>
+              <option value="₹5,000–₹9,999">₹5,000–₹9,999</option>
+              <option value="₹10,000–₹14,999">₹10,000–₹14,999</option>
+              <option value="₹15,000–₹24,999">₹15,000–₹24,999</option>
+              <option value="₹25,000 or more">₹25,000 or more</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div id="usdPricing" hidden>
+            <label for="expectedPriceUsd" class="price-survey-label">For the full proposed overnight experience above, what would you be comfortable paying out of pocket? <span class="field-optional">(optional)</span></label>
+            <select id="expectedPriceUsd" name="expected_price_usd" disabled>
+              <option value="" selected>Select a price range (optional)</option>
+              <option value="Under $250">Under $250</option>
+              <option value="$250–$499">$250–$499</option>
+              <option value="$500–$999">$500–$999</option>
+              <option value="$1,000–$1,999">$1,000–$1,999</option>
+              <option value="$2,000 or more">$2,000 or more</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <p class="field-help">Just an optional research question to help us design the offering. These are not published prices, and choosing a range does not commit you to anything.</p>
         </div>
         <label class="signup-consent"><input type="checkbox" name="contact_consent" value="Yes, I agree" required/><span>I agree to receive emails from LAYA Health about LAYA Sleep early access, pilot availability and relevant updates. I can opt out at any time. <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy notice ↗</a></span></label>
         <button class="btn" type="submit">Join early access <span aria-hidden="true">↗</span></button>
@@ -457,20 +498,35 @@
       // Do not intercept this form: native POST allows captcha and confirmation redirects.
       const form=document.getElementById('interestForm');
       const interestSelect=document.getElementById('interest');
+      const citySelect=document.getElementById('city');
       const pricingField=document.getElementById('pricingField');
+      const priceCurrency=document.getElementById('priceCurrency');
+      const inrPricing=document.getElementById('inrPricing');
+      const usdPricing=document.getElementById('usdPricing');
       const expectedPrice=document.getElementById('expectedPrice');
+      const expectedPriceUsd=document.getElementById('expectedPriceUsd');
       const phoneInput=document.getElementById('phone');
       const phoneContactConsent=document.getElementById('phoneContactConsent');
 
       function syncCustomerPricing() {
         const isCustomer=interestSelect?.value==='Potential customer';
+        const inUSD=priceCurrency?.value==='USD';
         if (pricingField) pricingField.hidden=!isCustomer;
-        if (expectedPrice) {
-          expectedPrice.disabled=!isCustomer;
-          if (!isCustomer) expectedPrice.value='';
-        }
+        if (priceCurrency) priceCurrency.disabled=!isCustomer;
+        if (inrPricing) inrPricing.hidden=!isCustomer||inUSD;
+        if (usdPricing) usdPricing.hidden=!isCustomer||!inUSD;
+        if (expectedPrice) expectedPrice.disabled=!isCustomer||inUSD;
+        if (expectedPriceUsd) expectedPriceUsd.disabled=!isCustomer||!inUSD;
       }
       interestSelect?.addEventListener('change',syncCustomerPricing);
+      citySelect?.addEventListener('change', () => {
+        // Suggest the relevant currency without preventing manual selection.
+        if (!priceCurrency) return;
+        const country=citySelect.selectedOptions[0]?.parentElement?.label;
+        priceCurrency.value=country==='United States'?'USD':'INR';
+        syncCustomerPricing();
+      });
+      priceCurrency?.addEventListener('change',syncCustomerPricing);
       syncCustomerPricing();
       phoneInput?.addEventListener('input',()=>phoneInput.setCustomValidity(''));
       form?.addEventListener('submit', (event) => {
