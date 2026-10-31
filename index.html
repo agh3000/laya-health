@@ -420,7 +420,7 @@
         <input type="hidden" name="_url" value="https://agh3000.github.io/laya-health/"/>
         <input type="hidden" name="signup_program" value="LAYA Sleep early interest"/>
         <div class="anti-bot" aria-hidden="true"><label for="companyWebsite">Leave blank</label><input name="_honey" id="companyWebsite" type="text" tabindex="-1" autocomplete="off"/></div>
-        <div class="twocol"><div class="field"><label for="firstName">First name</label><input id="firstName" name="first_name" autocomplete="given-name" placeholder="Your name" required maxlength="80"/></div><div class="field"><label for="city">Your city</label><select id="city" name="city" required><option value="" disabled selected>Select city</option><optgroup label="India"><option>Bengaluru</option><option>Mumbai</option><option>Delhi NCR</option><option>Hyderabad</option></optgroup><optgroup label="United States"><option>San Francisco Bay Area, CA</option><option>Boston, MA</option><option>New York City (NYC), NY</option><option>Chicago, IL</option></optgroup><option>Other city</option></select></div></div>
+        <div class="twocol"><div class="field"><label for="firstName">First name</label><input id="firstName" name="first_name" autocomplete="given-name" placeholder="Your name" required maxlength="80"/></div><div class="field"><label for="city">Your city</label><select id="city" name="city" required><option value="" disabled selected>Select city</option><optgroup label="India"><option>Bengaluru</option><option>Mumbai</option><option>Delhi NCR</option><option>Hyderabad</option></optgroup><optgroup label="United States"><option>San Francisco Bay Area, CA</option><option>Boston, MA</option><option>New York City (NYC), NY</option><option>Chicago, IL</option><option>Other US city</option></optgroup><option>Other city</option></select></div></div>
         <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required maxlength="250" /></div>
         <div class="field">
           <label for="phone">Phone / WhatsApp <span class="field-optional">(optional)</span></label>
@@ -465,13 +465,13 @@
               <option value="" selected>Select a price range (optional)</option>
               <option value="Under $250">Under $250</option>
               <option value="$250–$499">$250–$499</option>
-              <option value="$500–$999">$500–$999</option>
-              <option value="$1,000–$1,999">$1,000–$1,999</option>
-              <option value="$2,000 or more">$2,000 or more</option>
+              <option value="$500–$749">$500–$749</option>
+              <option value="$750–$1,249">$750–$1,249</option>
+              <option value="$1,250 or more">$1,250 or more</option>
               <option value="Not sure yet">Not sure yet</option>
             </select>
           </div>
-          <p class="field-help">Just an optional research question to help us design the offering. These are not published prices, and choosing a range does not commit you to anything.</p>
+          <p class="field-help">Optional market research only. Price ranges are adjusted for local purchasing power, not converted at exchange rates. These are not published prices, and choosing a range does not commit you to anything.</p>
         </div>
         <label class="signup-consent"><input type="checkbox" name="contact_consent" value="Yes, I agree" required/><span>I agree to receive emails from LAYA Health about LAYA Sleep early access, pilot availability and relevant updates. I can opt out at any time. <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy notice ↗</a></span></label>
         <button class="btn" type="submit">Join early access <span aria-hidden="true">↗</span></button>
@@ -522,7 +522,7 @@
       citySelect?.addEventListener('change', () => {
         // Suggest the relevant currency without preventing manual selection.
         if (!priceCurrency) return;
-        const country=citySelect.selectedOptions[0]?.parentElement?.label;
+        const country=citySelect.selectedOptions[0]?.closest('optgroup')?.label;
         priceCurrency.value=country==='United States'?'USD':'INR';
         syncCustomerPricing();
       });
