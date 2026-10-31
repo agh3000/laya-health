@@ -167,6 +167,14 @@
     .field-optional{font-weight:500;color:#747c6f;font-size:11px;}
     .field-help{font-size:11px!important;line-height:1.6!important;color:#65705f!important;margin:6px 0 0!important;}
     .signup .phone-consent{margin-top:10px;margin-bottom:18px;font-size:11px;}
+    .field-required{font-size:11px;font-weight:700;color:#455f35;}
+    .phone-input-row{display:grid;grid-template-columns:minmax(145px,0.95fr) minmax(0,1.5fr);gap:10px;align-items:end;}
+    .phone-country label{display:block;font-size:11px;font-weight:650;color:#626960;margin:0 0 7px;}
+    .phone-country select,.phone-number input{width:100%;}
+    .phone-custom-code[hidden]{display:none!important;}
+    .phone-custom-code{margin-top:12px;max-width:220px;}
+    .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+    @media(max-width:440px){.phone-input-row{grid-template-columns:minmax(130px,1fr) minmax(0,1.05fr);gap:8px;}}
     .pricing-field[hidden],#usdPricing[hidden],#inrPricing[hidden]{display:none!important;}
     .sleep-value{background:#f1f6e6;border:1px solid #d5e3c1;border-radius:16px;padding:20px 19px;margin:10px 0 21px;}
     .sleep-value-kicker{display:block;color:#526a32;font-size:9px;font-weight:850;letter-spacing:.11em;line-height:1.4;}
@@ -423,9 +431,34 @@
         <div class="twocol"><div class="field"><label for="firstName">First name</label><input id="firstName" name="first_name" autocomplete="given-name" placeholder="Your name" required maxlength="80"/></div><div class="field"><label for="city">Your city</label><select id="city" name="city" required><option value="" disabled selected>Select city</option><optgroup label="India"><option>Bengaluru</option><option>Mumbai</option><option>Delhi NCR</option><option>Hyderabad</option></optgroup><optgroup label="United States"><option>San Francisco Bay Area, CA</option><option>Boston, MA</option><option>New York City (NYC), NY</option><option>Chicago, IL</option><option>Other US city</option></optgroup><option>Other city</option></select></div></div>
         <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required maxlength="250" /></div>
         <div class="field">
-          <label for="phone">Phone / WhatsApp <span class="field-optional">(optional)</span></label>
-          <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" maxlength="25" />
-          <p class="field-help">Include your country code. We will only contact this number if you opt in below.</p>
+          <label for="phone">Phone / WhatsApp number <span class="field-required">(required)</span></label>
+          <div class="phone-input-row">
+            <div class="phone-country">
+              <label for="phoneCountryCode">Country code</label>
+              <select id="phoneCountryCode" name="phone_country_code" required aria-label="Phone country calling code">
+                <option value="+91" selected>🇮🇳 +91 India</option>
+                <option value="+1">🇺🇸 +1 US / Canada</option>
+                <option value="+44">🇬🇧 +44 UK</option>
+                <option value="+971">🇦🇪 +971 UAE</option>
+                <option value="+61">🇦🇺 +61 Australia</option>
+                <option value="+65">🇸🇬 +65 Singapore</option>
+                <option value="+49">🇩🇪 +49 Germany</option>
+                <option value="+33">🇫🇷 +33 France</option>
+                <option value="+81">🇯🇵 +81 Japan</option>
+                <option value="+966">🇸🇦 +966 Saudi Arabia</option>
+                <option value="other">Other code…</option>
+              </select>
+            </div>
+            <div class="phone-number">
+              <label for="phone" class="visually-hidden">Phone number without country code</label>
+              <input id="phone" type="tel" name="phone" autocomplete="tel-national" inputmode="tel" placeholder="Your phone number" maxlength="22" pattern="[0-9 ().-]{6,22}" title="Enter a phone number using digits, spaces, brackets or hyphens" required aria-describedby="phoneHelp" />
+            </div>
+          </div>
+          <div class="phone-custom-code" id="phoneCustomCodeWrap" hidden>
+            <label for="phoneCustomCode">Enter your calling code (for example +64)</label>
+            <input id="phoneCustomCode" type="tel" inputmode="tel" name="phone_country_code_other" placeholder="+64" pattern="\\+[1-9][0-9]{0,3}" maxlength="5" disabled />
+          </div>
+          <p class="field-help" id="phoneHelp">Choose your country code and enter your number without the code. Providing a number does not opt you into calls or WhatsApp messages.</p>
         </div>
         <label class="signup-consent phone-consent"><input id="phoneContactConsent" type="checkbox" name="phone_contact_permission" value="Yes"/><span>You may contact me by phone or WhatsApp about LAYA Sleep pilot opportunities. (optional)</span></label>
         <div class="field"><label for="interest">I'm interested as a...</label><select id="interest" name="interest" required><option value="" disabled selected>Choose one</option><option>Potential customer</option><option>Clinical partner</option><option>Employer / wellness partner</option><option>Investor</option><option>Other</option></select></div>
@@ -506,7 +539,22 @@
       const expectedPrice=document.getElementById('expectedPrice');
       const expectedPriceUsd=document.getElementById('expectedPriceUsd');
       const phoneInput=document.getElementById('phone');
+      const phoneCountryCode=document.getElementById('phoneCountryCode');
+      const phoneCustomCodeWrap=document.getElementById('phoneCustomCodeWrap');
+      const phoneCustomCode=document.getElementById('phoneCustomCode');
       const phoneContactConsent=document.getElementById('phoneContactConsent');
+      
+      function syncPhoneCode() {
+        const isCustom=phoneCountryCode?.value==='other';
+        if (phoneCustomCodeWrap) phoneCustomCodeWrap.hidden=!isCustom;
+        if (phoneCustomCode) {
+          phoneCustomCode.disabled=!isCustom;
+          phoneCustomCode.required=Boolean(isCustom);
+          if (!isCustom) phoneCustomCode.value='';
+        }
+      }
+      phoneCountryCode?.addEventListener('change',syncPhoneCode);
+      syncPhoneCode();
 
       function syncCustomerPricing() {
         const isCustomer=interestSelect?.value==='Potential customer';
@@ -524,15 +572,30 @@
         if (!priceCurrency) return;
         const country=citySelect.selectedOptions[0]?.closest('optgroup')?.label;
         priceCurrency.value=country==='United States'?'USD':'INR';
+        // Suggest a dialing code based on city; respondents can change it.
+        if (phoneCountryCode && (country==='United States'||country==='India')) {
+          phoneCountryCode.value=country==='United States'?'+1':'+91';
+          syncPhoneCode();
+        }
         syncCustomerPricing();
       });
       priceCurrency?.addEventListener('change',syncCustomerPricing);
       syncCustomerPricing();
       phoneInput?.addEventListener('input',()=>phoneInput.setCustomValidity(''));
+      phoneCustomCode?.addEventListener('input',()=>phoneCustomCode.setCustomValidity(''));
       form?.addEventListener('submit', (event) => {
-        if (phoneContactConsent?.checked && !phoneInput?.value.trim()) {
+        // Check national digits + dialing code length for common input errors.
+        const nationalDigits=(phoneInput?.value||'').replace(/\\D/g,'');
+        const callingCode=phoneCountryCode?.value==='other'?phoneCustomCode?.value:phoneCountryCode?.value;
+        const callingDigits=(callingCode||'').replace(/\\D/g,'');
+        if (!callingDigits || callingDigits.length>4) {
           event.preventDefault();
-          phoneInput.setCustomValidity('Enter a phone number to allow phone or WhatsApp follow-up.');
+          (phoneCustomCode?.disabled?phoneCountryCode:phoneCustomCode)?.reportValidity();
+          return;
+        }
+        if (nationalDigits.length<6 || nationalDigits.length+callingDigits.length>15) {
+          event.preventDefault();
+          phoneInput.setCustomValidity('Please enter a valid phone number (6–15 digits including country code).');
           phoneInput.reportValidity();
           return;
         }
