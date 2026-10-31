@@ -456,7 +456,7 @@
           </div>
           <div class="phone-custom-code" id="phoneCustomCodeWrap" hidden>
             <label for="phoneCustomCode">Enter your calling code (for example +64)</label>
-            <input id="phoneCustomCode" type="tel" inputmode="tel" name="phone_country_code_other" placeholder="+64" pattern="\\+[1-9][0-9]{0,3}" maxlength="5" disabled />
+            <input id="phoneCustomCode" type="tel" inputmode="tel" name="phone_country_code_other" placeholder="+64" pattern="\+[1-9][0-9]{0,3}" maxlength="5" disabled />
           </div>
           <p class="field-help" id="phoneHelp">Choose your country code and enter your number without the code. Providing a number does not opt you into calls or WhatsApp messages.</p>
         </div>
@@ -585,9 +585,9 @@
       phoneCustomCode?.addEventListener('input',()=>phoneCustomCode.setCustomValidity(''));
       form?.addEventListener('submit', (event) => {
         // Check national digits + dialing code length for common input errors.
-        const nationalDigits=(phoneInput?.value||'').replace(/\\D/g,'');
+        const nationalDigits=(phoneInput?.value||'').replace(/\D/g,'');
         const callingCode=phoneCountryCode?.value==='other'?phoneCustomCode?.value:phoneCountryCode?.value;
-        const callingDigits=(callingCode||'').replace(/\\D/g,'');
+        const callingDigits=(callingCode||'').replace(/\D/g,'');
         if (!callingDigits || callingDigits.length>4) {
           event.preventDefault();
           (phoneCustomCode?.disabled?phoneCountryCode:phoneCustomCode)?.reportValidity();
