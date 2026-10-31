@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f6f1">
+  <meta name="description" content="Meet Arnav Gupta, founder of LAYA Health. A Harvard PhD researcher working at the intersection of sleep science, clinical physiology and artificial intelligence.">
+  <meta property="og:title" content="Our Founder — LAYA Health">
+  <meta property="og:description" content="From research in sleep AI to a new vision for accessible clinical sleep health.">
+  <title>Our Founder — LAYA Health</title>
+  <style>
+  :root{--ink:#151615;--muted:#656760;--paper:#f6f6f1;--line:#dedfd7;--lime:#d7fa7b;--night:#191a1b;--radius:26px}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .container{width:min(calc(100% - 90px),1180px);margin:0 auto}
+  .announcement{background:#d7fa7b;font-size:10px;text-align:center;padding:11px 15px;letter-spacing:.07em}
+  header{background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;min-height:85px;gap:20px}
+  .logo{text-decoration:none;font-size:36px;letter-spacing:-.09em;font-weight:850;line-height:1}
+  .logo .period{color:#88aa57}
+  .logo small{font-size:10px;letter-spacing:.14em;margin-left:12px;color:#777d71;vertical-align:middle}
+  nav{display:flex;gap:26px;align-items:center}
+  nav a{font-size:12px;text-decoration:none;font-weight:650}
+  nav a[aria-current=page]{border-bottom:2px solid #687f41;padding-bottom:6px}
+  .nav-cta,.button{background:#181a18;border:1px solid #181a18;border-radius:999px;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:14px 22px;display:inline-flex;justify-content:center;align-items:center;gap:10px}
+  .mobile-toggle{display:none;background:none;border:0;font-weight:750;font-size:12px;padding:14px 0}
+  .founder-hero{padding:110px 0 100px;display:grid;grid-template-columns:1fr .84fr;gap:68px;align-items:center}
+  .eyebrow{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#646b59}
+  .eyebrow:before{content:"";background:#9ac35b;width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:11px}
+  h1{font-size:clamp(53px,6vw,90px);line-height:.99;letter-spacing:-.078em;margin:25px 0 28px;max-width:720px}
+  h1 em{font-style:normal;color:#819d54}
+  .intro{font-size:18px;line-height:1.7;max-width:585px;color:#4f554a;margin:0 0 34px}
+  .founder-name{display:block;font-size:23px;font-weight:800;letter-spacing:-.03em;margin-bottom:5px}
+  .founder-role{display:block;color:var(--muted);font-size:13px;line-height:1.6}
+  .hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:35px}
+  .button.outline{background:transparent;border-color:#9da394;color:#1d201a}
+  .art{background:#1d201e;color:#fff;border-radius:32px;padding:36px;min-height:520px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+  .art:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(215,250,123,.13),transparent 68%);right:-70px;top:-100px}
+  .art-label{font-size:10px;letter-spacing:.17em;font-weight:750;color:#d1d9c6;z-index:1}
+  .monogram{font-size:clamp(140px,15vw,235px);font-weight:850;letter-spacing:-.15em;line-height:.8;color:var(--lime);z-index:1;padding-right:15px}
+  .art svg{width:100%;height:90px;z-index:1}
+  .art-caption{display:flex;justify-content:space-between;font-size:10px;color:#aeb9a8;letter-spacing:.10em;gap:10px}
+  .story{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:95px 0}
+  .story-grid{display:grid;grid-template-columns:.7fr 1fr;gap:90px}
+  .label{font-size:10px;font-weight:850;letter-spacing:.14em;color:#738161;text-transform:uppercase}
+  .story h2{font-size:clamp(34px,4vw,57px);letter-spacing:-.065em;line-height:1.12;margin:18px 0}
+  .story-copy p{font-size:18px;line-height:1.8;color:#4c504b;margin:0 0 23px}
+  .story-copy p:first-child{font-weight:600;color:#20241f}
+  .experience{padding:96px 0 105px}
+  .experience-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:32px}
+  .experience h2{font-size:clamp(34px,4vw,54px);line-height:1.07;letter-spacing:-.06em;margin:15px 0 0}
+  .experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+  .experience-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+  .experience-card .index{font-size:10px;color:#8b9383;font-weight:750}
+  .experience-card strong{font-size:20px;letter-spacing:-.025em;display:block}
+  .experience-card span.detail{display:block;font-size:12px;color:var(--muted);margin-top:7px;line-height:1.55}
+  .publication{margin-top:30px;padding:28px;background:#e8eddf;border-radius:20px;display:flex;justify-content:space-between;gap:25px;align-items:center}
+  .publication strong{font-size:16px;display:block;margin-top:8px}
+  .publication p{margin:8px 0 0;font-size:12px;color:#5a6153;max-width:620px;line-height:1.6}
+  .publication a{white-space:nowrap;font-size:12px;text-decoration:none;font-weight:750;border-bottom:1px solid #1c2713;padding-bottom:5px}
+  .vision{background:var(--night);color:#fff;padding:83px 0}
+  .vision-grid{display:grid;grid-template-columns:1fr .55fr;gap:60px;align-items:center}
+  .vision h2{font-size:clamp(38px,5vw,66px);line-height:1.08;letter-spacing:-.06em;margin:14px 0 0}
+  .vision p{font-size:16px;line-height:1.7;color:#bbc2b6;margin:0 0 25px}
+  .vision .button{background:var(--lime);color:#161a14;border-color:var(--lime)}
+  .disclaimer{padding:30px 0;color:#6c7168;font-size:11px;line-height:1.7}
+  footer{background:#111311;color:#fff;padding:45px 0}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .footer-inner strong{font-size:30px;letter-spacing:-.09em}
+  .footer-inner p{font-size:11px;color:#9ea69d}
+  .footer-inner a{color:#d9e5d1;text-decoration:none;font-size:12px;font-weight:650}
+  @media(max-width:850px){
+    .container{width:calc(100% - 38px)}
+    .founder-hero{grid-template-columns:1fr;gap:35px;padding:60px 0 70px}
+    .art{min-height:360px}
+    .monogram{font-size:155px}
+    .story-grid,.vision-grid{grid-template-columns:1fr;gap:24px}
+    .story{padding:65px 0}
+    .experience{padding:70px 0}
+  }
+  @media(max-width:620px){
+    .nav{min-height:70px;position:relative}
+    .logo{font-size:30px}
+    nav{display:none;position:absolute;z-index:30;top:100%;left:-19px;right:-19px;padding:24px;background:var(--paper);box-shadow:0 18px 27px rgba(0,0,0,.09);flex-direction:column;align-items:stretch;gap:21px}
+    nav.open{display:flex}
+    .mobile-toggle{display:block}
+    .founder-hero h1{font-size:clamp(54px,11vw,75px)}
+    .intro{font-size:16px}
+    .experience-grid{grid-template-columns:1fr}
+    .experience-head,.publication,.footer-inner{align-items:flex-start;flex-direction:column}
+    .publication a{white-space:normal}
+    .art{padding:26px;min-height:335px}
+    .story-copy p{font-size:16px}
+    .vision{padding:60px 0}
+  }
+  </style>
+</head>
+<body>
+  <div class="announcement">✳ &nbsp;<strong>LAYA HEALTH</strong> &nbsp;·&nbsp; Building a more approachable future for clinical health</div>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="./index.html" aria-label="LAYA Health home">laya<span class="period">.</span><small>HEALTH</small></a>
+      <nav id="siteNav" aria-label="Main navigation">
+        <a href="./index.html#why">Why LAYA</a>
+        <a href="./index.html#physical">LAYA Sleep</a>
+        <a href="./founder.html" aria-current="page">Founder</a>
+        <a class="nav-cta" href="./index.html#early-access">Early access ↗</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-controls="siteNav" aria-expanded="false">Menu ☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="container founder-hero" aria-labelledby="founderTitle">
+      <div>
+        <div class="eyebrow">THE PERSON BEHIND LAYA</div>
+        <h1 id="founderTitle">Science first.<br><em>People always.</em></h1>
+        <p class="intro">Turning years of research in sleep physiology and artificial intelligence into a simple idea: advanced sleep health should be easier to understand and access.</p>
+        <span class="founder-name">Arnav Gupta</span>
+        <span class="founder-role">Founder, LAYA Health<br>PhD researcher, Harvard University · Sleep AI research at Beth Israel Deaconess Medical Center</span>
+        <div class="hero-links">
+          <a class="button" href="./index.html#physical">Explore LAYA Sleep <span aria-hidden="true">↗</span></a>
+          <a class="button outline" href="https://scholar.google.com/citations?user=g_C2jqMAAAAJ" target="_blank" rel="noopener noreferrer">Research profile ↗</a>
+        </div>
+      </div>
+      <div class="art" role="img" aria-label="Editorial AG monogram with illustrated scientific signals, not a photograph">
+        <div class="art-label">FOUNDER / RESEARCHER / BUILDER</div>
+        <div class="monogram">AG.</div>
+        <svg viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 53 L31 53 L39 48 L48 56 L57 35 L68 72 L82 47 L94 53 L114 53 L128 43 L141 64 L155 50 L171 51 L186 27 L202 83 L217 43 L232 55 L252 53 L271 53 L285 37 L300 65 L315 48 L329 51 L343 33 L354 78 L367 45 L381 56 L403 53 L421 53 L433 43 L445 63 L455 50 L472 51 L488 25 L501 81 L519 45 L530 56 L550 53 L569 53 L583 47 L600 53" fill="none" stroke="#d7fa7b" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="art-caption"><span>BRAIN SIGNALS</span><span>BREATHING</span><span>PHYSIOLOGY</span></div>
+      </div>
+    </section>
+    <section class="story" aria-labelledby="storyTitle">
+      <div class="container story-grid">
+        <div>
+          <span class="label">WHY LAYA EXISTS</span>
+          <h2 id="storyTitle">The missing health check.</h2>
+        </div>
+        <div class="story-copy">
+          <p>We regularly check our blood. But most of us have never had a meaningful assessment of what happens to our brain, breathing and body while we sleep.</p>
+          <p>My research focuses on analyzing overnight sleep studies with AI—finding patterns in complex physiological signals and understanding how clinical labels are interpreted. It showed me both the power of these measurements and how far the experience is from everyday preventive health.</p>
+          <p>That's why I'm building LAYA Health. We are starting with LAYA Sleep: a vision for making clinical-grade sleep assessments more accessible, welcoming and actionable, with follow-up monitoring and appropriate care beyond a single night.</p>
+        </div>
+      </div>
+    </section>
+    <section class="experience" aria-labelledby="researchTitle">
+      <div class="container">
+        <div class="experience-head">
+          <div><span class="label">THE FOUNDATION</span><h2 id="researchTitle">Built on sleep science.</h2></div>
+        </div>
+        <div class="experience-grid">
+          <div class="experience-card"><span class="index">01 / ACADEMICS</span><div><strong>Harvard University</strong><span class="detail">PhD researcher at the Harvard John A. Paulson School of Engineering and Applied Sciences.</span></div></div>
+          <div class="experience-card"><span class="index">02 / RESEARCH</span><div><strong>Clinical sleep AI</strong><span class="detail">Sleep physiology and machine-learning research in the Department of Neurology at Beth Israel Deaconess Medical Center.</span></div></div>
+          <div class="experience-card"><span class="index">03 / PUBLICATION</span><div><strong>PANDA</strong><span class="detail">First author of a 2026 npj Digital Medicine paper on AI-based pediatric sleep arousal detection.</span></div></div>
+          <div class="experience-card"><span class="index">04 / ENTREPRENEURSHIP</span><div><strong>Harvard Innovation Labs</strong><span class="detail">i-lab member exploring ways to translate unmet sleep-health needs into an accessible consumer experience.</span></div></div>
+        </div>
+        <div class="publication">
+          <div><span class="label">SELECTED RESEARCH</span><strong>PANDA pediatric arousal neural detection architecture</strong><p>Gupta et al., <em>npj Digital Medicine</em> (2026). Academic research, cited here as background to the founder's experience.</p></div>
+          <a href="https://www.nature.com/articles/s41746-026-02967-x" target="_blank" rel="noopener noreferrer">Read publication ↗</a>
+        </div>
+      </div>
+    </section>
+    <section class="vision" aria-labelledby="visionTitle">
+      <div class="container vision-grid">
+        <div>
+          <span class="label" style="color:#c1cfb2">WHAT WE'RE BUILDING</span>
+          <h2 id="visionTitle">Sleep health.<br>Beyond tracking.</h2>
+        </div>
+        <div>
+          <p>Start with a high-fidelity clinical baseline. Understand what the signals mean. Use everyday trends and appropriate follow-up to build a better relationship with sleep.</p>
+          <a class="button" href="./index.html">Meet LAYA Sleep ↗</a>
+        </div>
+      </div>
+    </section>
+    <div class="container disclaimer">LAYA Health is an independent, pre-launch venture. Academic affiliations and publications describe the founder's research background; they do not imply endorsement by Harvard University, Beth Israel Deaconess Medical Center or their affiliated institutions. Academic models, research data and intellectual property are not represented as LAYA Health products or assets.</div>
+  </main>
+  <footer>
+    <div class="container footer-inner"><div><strong>laya.</strong><p>HEALTH · Starting with LAYA Sleep</p></div><a href="./index.html">Back to LAYA Health ↗</a><p>© <span id="year">2026</span> LAYA Health · Pre-launch</p></div>
+  </footer>
+  <script>
+    (() => {
+      const toggle = document.getElementById('mobileToggle');
+      const nav = document.getElementById('siteNav');
+      toggle?.addEventListener('click', () => {
+        const opened = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(opened));
+      });
+      nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }));
+      document.getElementById('year').textContent=String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>
