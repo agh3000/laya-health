@@ -41,7 +41,9 @@
     .eyebrow { display:flex;align-items:center;gap:12px; font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:750; }
     .dot { width:8px;height:8px;background:#8fba3c;border-radius:100%;display:inline-block; flex:none; }
     .hero { display:grid;grid-template-columns:.95fr 1.05fr; align-items:center; gap:52px; min-height:685px; padding-block:76px 90px; }
-    .hero h1 { margin:28px 0 26px; font-size:clamp(58px,6.3vw,92px);font-weight:800;letter-spacing:-.078em;line-height:.99; }
+    .hero h1 { margin:25px 0 25px; font-size:clamp(46px,4.6vw,66px);font-weight:800;letter-spacing:-.07em;line-height:1.035; }
+    .hero h1 .sleep-question {color:#758d4b;display:block;margin-top:12px;}
+    .hero .hero-foot strong {color:#262c24;font-weight:800;}
     .hero h1 .mark { display:inline-block; position:relative;white-space:nowrap; isolation:isolate; }
     .hero h1 .mark:after { content:""; height:10px;background:var(--lime); position:absolute;bottom:2px;left:3px;right:3px;z-index:-1; transform:rotate(-1.5deg); }
     .hero p { max-width:490px;font-size:17px;line-height:1.72;color:#4d514b;margin:0 0 32px; }
@@ -181,7 +183,7 @@
       .container{width:min(100% - 44px,1200px)}
       .nav-links{gap:19px;}
       .hero{grid-template-columns:1fr 1fr;gap:20px;}
-      .hero h1{font-size:clamp(52px,6vw,72px)}
+      .hero h1{font-size:clamp(45px,4.8vw,62px)}
       .float-badge{left:-18px}
       .experience-layout{gap:32px;}
       .loop-content{gap:30px;}
@@ -197,7 +199,7 @@
       .nav-links a.btn{justify-content:center;}
       .mobile-toggle{display:flex;}
       .hero{grid-template-columns:1fr;padding-block:53px 75px;gap:40px;}
-      .hero h1{font-size:clamp(54px,13vw,78px);letter-spacing:-.076em;}
+      .hero h1{font-size:clamp(44px,10.5vw,62px);letter-spacing:-.073em;}
       .hero p{font-size:15px;}
       .visual-stage{margin-left:10px;}
       .sleep-dashboard{padding:11px;border-radius:25px;}
@@ -255,17 +257,18 @@
       .brand-connector {height:41px;transform:rotate(90deg);}
     }
 
-    /* Why get your blood tests but not your sleep? */
-    .health-question { background:#1c1e1d; color:#fff; padding:76px 0; }
-    .health-question-grid { display:grid; grid-template-columns:1.14fr .86fr; align-items:center; gap:72px; }
-    .health-question .section-kicker { color:#c9d4bb; }
-    .health-question h2 { font-size:clamp(34px,4.4vw,62px); line-height:1.11; letter-spacing:-.058em; margin:17px 0 0; }
-    .health-question h2 em { color:var(--lime); font-style:normal; }
-    .health-question p { color:#d0d5cd; line-height:1.72; font-size:clamp(15px,1.4vw,18px); max-width:440px; margin:0; }
-    @media (max-width:800px) {
-      .health-question { padding:52px 0; }
-      .health-question-grid { grid-template-columns:1fr; gap:22px; }
-      .health-question p { max-width:580px; }
+
+    /* Founder introduction */
+    .founder-preview {padding:76px 0;background:#e9ede4;}
+    .founder-preview-inner {display:grid;grid-template-columns:310px 1fr;gap:78px;align-items:center;}
+    .founder-preview-mark {height:265px;border-radius:27px;background:#202421;color:#d7fa7b;display:flex;align-items:center;justify-content:center;font-size:125px;letter-spacing:-.15em;font-weight:850;padding-right:17px;}
+    .founder-preview h2{font-size:clamp(35px,4.2vw,58px);letter-spacing:-.064em;line-height:1.07;margin:16px 0;}
+    .founder-preview p{color:#535c4f;line-height:1.7;max-width:600px;font-size:15px;margin:0 0 24px;}
+    .founder-preview .section-kicker{color:#65735d;}
+    @media(max-width:740px){
+      .founder-preview {padding:58px 0;}
+      .founder-preview-inner {grid-template-columns:1fr;gap:24px;}
+      .founder-preview-mark {height:140px;font-size:90px;}
     }
   </style>
 </head>
@@ -275,7 +278,7 @@
     <div class="container nav">
       <a href="#top" class="logo" aria-label="LAYA Health home">laya<span class="period">.</span><small>HEALTH</small></a>
       <nav class="nav-links" id="siteNav" aria-label="Main navigation">
-        <a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="#faq">FAQs</a>
+        <a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="./founder.html">Founder</a><a href="#faq">FAQs</a>
         <a class="btn" href="#early-access">Get early access <span aria-hidden="true">↗</span></a>
       </nav>
       <button class="mobile-toggle" type="button" id="mobileToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav"><span></span></button>
@@ -285,10 +288,10 @@
     <section class="container hero" aria-labelledby="heroTitle">
       <div>
         <div class="eyebrow"><span class="dot"></span> INTRODUCING LAYA SLEEP · BY LAYA HEALTH</div>
-        <h1 id="heroTitle">Sleep health.<br/><span class="mark">Beyond</span><br/>tracking.</h1>
-        <p>Your watch tracks the night. <strong>We want to help you understand it.</strong> Clinical-grade overnight sleep testing, meaningful insights, and a personalized path forward—without the traditional hospital feel.</p>
+        <h1 id="heroTitle">Got your blood<br/>tests done?<br/><span class="sleep-question">What about<br/>your sleep?</span></h1>
+        <p><strong>Sleep can reveal more than a wearable score.</strong> A clinical study measures brain activity, breathing, oxygen and heart rhythm overnight. LAYA Sleep aims to make this deeper health check accessible—and help you understand what to do next.</p>
         <div class="hero-actions"><a class="btn" href="#physical">Meet the Sleep Physical <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#early-access">Join the early list <span aria-hidden="true">→</span></a></div>
-        <div class="hero-foot"><span class="stroke"></span><span>Sleep testing · Ongoing monitoring · Guided care</span></div>
+        <div class="hero-foot"><span class="stroke"></span><span><strong>Sleep Health. Beyond Tracking.</strong> &nbsp;·&nbsp; Test · Monitor · Care</span></div>
       </div>
       <div class="visual-stage" role="img" aria-label="Illustrative graphic of clinical sleep signals including brain, breathing, heart and oxygen. Not real patient data.">
         <div class="sleep-dashboard"><div class="dashboard-inner">
@@ -307,15 +310,6 @@
     </section>
 
 
-    <section class="health-question" aria-labelledby="healthQuestion">
-      <div class="container health-question-grid">
-        <div>
-          <span class="section-kicker">THE HEALTH CHECK WE SKIP</span>
-          <h2 id="healthQuestion">Got your blood tests done?<br/><em>What about your sleep?</em></h2>
-        </div>
-        <p>A clinical sleep study can measure your brain activity, breathing, oxygen levels and heart rhythm overnight—helping reveal sleep disruptions that a wearable score alone may not explain.</p>
-      </div>
-    </section>
     <section class="brand-architecture" aria-labelledby="brandIntro">
       <div class="container brand-architecture-inner reveal">
         <div class="brand-node">
@@ -375,6 +369,18 @@
       <div class="reveal"><h2>Make sleep health<br/>a normal health check.</h2><p>Sleep assessment has traditionally been something you seek when a problem becomes serious. We want to make clinical-grade sleep health more accessible, understandable, and approachable—while preserving the rigor that medical testing deserves.</p>
       <div class="values"><div><b>Clinical-grade by design</b><span>High-fidelity physiological measurement, not wearable estimates alone.</span></div><div><b>Human-first experience</b><span>Welcoming environments and understandable results.</span></div><div><b>Technology with purpose</b><span>AI assists clinical workflows; it doesn't replace clinicians.</span></div><div><b>Care beyond one night</b><span>Follow-up, monitoring and interventions where appropriate.</span></div></div></div>
     </div></section>
+
+    <section class="founder-preview" aria-labelledby="founderPreviewTitle">
+      <div class="container founder-preview-inner">
+        <div class="founder-preview-mark" aria-hidden="true">AG.</div>
+        <div>
+          <span class="section-kicker">MEET THE FOUNDER</span>
+          <h2 id="founderPreviewTitle">Built by a sleep scientist.<br/>For everyone else.</h2>
+          <p><strong>Arnav Gupta</strong> is a Harvard PhD researcher studying clinical sleep physiology and AI. LAYA Health grew from a simple question: why should understanding your sleep be so difficult?</p>
+          <a class="btn" href="./founder.html">Meet our founder <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
     <section class="section faq" id="faq"><div class="container">
       <span class="section-kicker">QUESTIONS, ANSWERED</span><h2>Good questions. Better nights.</h2>
       <div class="faq-list">
@@ -398,7 +404,7 @@
       </form>
     </div></section>
   </main>
-  <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">laya<span>.</span><span style="font-size:13px;letter-spacing:.14em;color:#b2bab0;margin-left:12px;font-weight:700;">HEALTH</span></div><div class="footer-desc">A broader vision for accessible, clinically grounded health.<br/><strong style="color:#fff">Starting with LAYA Sleep.</strong></div></div><div class="footer-links"><div><span>Explore</span><a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="#early-access">Early interest</a></div><div><span>About</span><a href="#faq">FAQs</a><a href="#early-access">Partner with us</a><a href="#top">Back to top ↑</a></div></div></div>
+  <footer><div class="container"><div class="footer-top"><div><div class="footer-brand">laya<span>.</span><span style="font-size:13px;letter-spacing:.14em;color:#b2bab0;margin-left:12px;font-weight:700;">HEALTH</span></div><div class="footer-desc">A broader vision for accessible, clinically grounded health.<br/><strong style="color:#fff">Starting with LAYA Sleep.</strong></div></div><div class="footer-links"><div><span>Explore</span><a href="#why">Why LAYA</a><a href="#physical">The Sleep Physical</a><a href="#journey">How it works</a><a href="#early-access">Early interest</a></div><div><span>About</span><a href="./founder.html">Our founder</a><a href="#faq">FAQs</a><a href="#early-access">Partner with us</a><a href="#top">Back to top ↑</a></div></div></div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> LAYA Health · Working brand · Pre-launch concept</span><span>Not currently offering medical services. No affiliations or wearable partnerships are implied.</span></div></div></footer>
   <script>
     (() => {
